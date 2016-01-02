@@ -1,5 +1,5 @@
 var win = Ti.UI.createWindow();
-var maps = require("tigooglemaps");
+var maps = require("ti.googlemaps");
 maps.setAPIKey("<YOUR_GOOGLE_MAPS_API_KEY>");
 
 /*
@@ -37,6 +37,7 @@ var companies = {
  */
 var mapView = maps.createMapView({
     mapType: maps.MAP_TYPE_TERRAIN,
+    clusteringEnabled: true,
     camera: {
         latitude: companies.appcelerator.latitude,
         longitude: companies.appcelerator.longitude,
@@ -139,6 +140,8 @@ for (var key in companies) {
         Ti.API.warn(key + ": " + company.title + " (" + company.city + ")");
     }
 }
+
+mapView.refreshCluster();
 
 // mapView.addMarkers([marker]);
 // mapView.removeMarker(marker);

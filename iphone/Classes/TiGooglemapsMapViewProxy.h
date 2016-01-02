@@ -26,4 +26,6 @@
 -(void)addCircle:(id)args;
 -(void)removeCircle:(id)args;
 
+-(BOOL)clusteringEnabled;
+
 @end

@@ -7,9 +7,11 @@
 #import "TiUIView.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import "TiGooglemapsMapView.h"
+#import "GClusterManager.h"
 
 @interface TiGooglemapsMapView : TiUIView<GMSMapViewDelegate>
 
+@property(nonatomic,retain) GClusterManager *clusterManager;
 @property(nonatomic,retain) GMSMapView *mapView;
 
 @end

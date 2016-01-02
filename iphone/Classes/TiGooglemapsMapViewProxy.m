@@ -11,6 +11,9 @@
 #import "TiGooglemapsPolygonProxy.h"
 #import "TiGooglemapsCircleProxy.h"
 #import "TiUtils.h"
+#import "Spot.h"
+
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 
 @implementation TiGooglemapsMapViewProxy
 
@@ -33,18 +36,28 @@
     ENSURE_TYPE(marker, TiGooglemapsMarkerProxy);
     ENSURE_UI_THREAD_1_ARG(args);
     
-    [[marker marker] setMap:[[self mapView] mapView]];
+    if ([self clusteringEnabled]) {
+        Spot* spot = [self spotWithMarker:[marker marker]];
+        [[[self mapView] clusterManager] addItem:spot];
+    } else {
+        [[marker marker] setMap:[[self mapView] mapView]];
+    }
 }
 
 -(void)addMarkers:(id)args
 {
     id markers = [args objectAtIndex:0];
- 
+    
     ENSURE_TYPE(markers, NSArray);
     ENSURE_UI_THREAD_1_ARG(args);
     
     for(TiGooglemapsMarkerProxy *marker in markers) {
-        [[marker marker] setMap:[[self mapView] mapView]];
+        if ([self clusteringEnabled]) {
+            Spot* spot = [self spotWithMarker:[marker marker]];
+            [[[self mapView] clusterManager] addItem:spot];
+        } else {
+            [[marker marker] setMap:[[self mapView] mapView]];
+        }
     }
 }
 
@@ -56,6 +69,17 @@
     ENSURE_UI_THREAD_1_ARG(args);
     
     [[marker marker] setMap:nil];
+}
+
+-(void)refreshCluster:(id)unused
+{
+    if ([self clusteringEnabled] == NO) {
+        NSLog(@"[WARN] Trying to refresh the cluster but mapView property `clusteringEnabled` is not set.");
+        return;
+    }
+    
+    ENSURE_UI_THREAD_1_ARG(unused);
+    [[[self mapView] clusterManager] cluster];
 }
 
 -(void)addPolyline:(id)args
@@ -116,6 +140,20 @@
     ENSURE_TYPE(circle, TiGooglemapsCircleProxy);
     
     [[circle circle] setMap:nil];
+}
+
+-(BOOL)clusteringEnabled
+{
+    return [TiUtils boolValue:[self valueForUndefinedKey:@"clusteringEnabled"] def:NO] == YES;
+}
+         
+#pragma mark Helper
+         
+- (Spot*)spotWithMarker:(GMSMarker*)marker {
+    Spot* spot = [[Spot alloc] init];
+    spot.location = marker.position;
+    spot.marker = marker;
+    return spot;
 }
 
 @end

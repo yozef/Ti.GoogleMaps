@@ -40,13 +40,6 @@
 	[super shutdown:sender];
 }
 
-#pragma mark Cleanup
-
--(void)dealloc
-{
-	[super dealloc];
-}
-
 #pragma mark Internal Memory Management
 
 -(void)didReceiveMemoryWarning:(NSNotification*)notification
@@ -84,9 +77,9 @@
     [GMSServices provideAPIKey:[TiUtils stringValue:value]];
 }
 
--(NSString*)version
+-(NSNumber*)version
 {
-    return [TiUtils stringValue:[GMSServices version]];
+    return NUMINTEGER([GMSServices version]);
 }
 
 MAKE_SYSTEM_PROP(MAP_TYPE_HYBRID, kGMSTypeHybrid);

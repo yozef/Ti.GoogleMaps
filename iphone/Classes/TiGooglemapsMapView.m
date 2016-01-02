@@ -11,20 +11,37 @@
 #import "TiGooglemapsCircleProxy.h"
 #import "TiGooglemapsPolygonProxy.h"
 #import "TiGooglemapsPolylineProxy.h"
+#import "Spot.h"
+#import "NonHierarchicalDistanceBasedAlgorithm.h"
+#import "GDefaultClusterRenderer.h"
 
 @implementation TiGooglemapsMapView
 
 @synthesize mapView = _mapView;
+
+-(TiGooglemapsMapViewProxy*)mapViewProxy
+{
+    return (TiGooglemapsMapViewProxy*)[self proxy];
+}
 
 -(GMSMapView*)mapView
 {
     if (_mapView == nil) {
         
         _mapView = [GMSMapView mapWithFrame:self.bounds camera:nil];
-        _mapView.delegate = self;
-        _mapView.myLocationEnabled = [TiUtils boolValue:[self.proxy valueForKey:@"myLocationEnabled"] def:YES];
-        _mapView.userInteractionEnabled = [TiUtils boolValue:[self.proxy valueForKey:@"userInteractionEnabled"] def:YES];
-        _mapView.autoresizingMask = UIViewAutoresizingNone;
+        
+        if ([[self mapViewProxy] clusteringEnabled]) {
+            _clusterManager = [GClusterManager managerWithMapView:_mapView
+                                                       algorithm:[[NonHierarchicalDistanceBasedAlgorithm alloc] init]
+                                                        renderer:[[GDefaultClusterRenderer alloc] initWithMapView:_mapView]];
+            
+            [_mapView setDelegate:_clusterManager];
+            [_clusterManager cluster];
+            [_clusterManager setDelegate:self];
+            
+        } else {
+            [_mapView setDelegate:self];
+        }
         
         [self addSubview:_mapView];
     }
@@ -39,6 +56,20 @@
 }
 
 #pragma mark Public API's
+
+-(void)setUserInteractionEnabled_:(id)value
+{
+    ENSURE_UI_THREAD_1_ARG(value);
+    ENSURE_TYPE(value, NSNumber);
+    
+    [_mapView setUserInteractionEnabled:[TiUtils boolValue:value]];
+    [[self proxy] replaceValue:value forKey:@"userInteractionEnabled" notification:NO];
+}
+
+-(NSNumber*)userInteractionEnabled
+{
+    return NUMBOOL([[self mapView] isUserInteractionEnabled]);
+}
 
 -(void)setMyLocationEnabled_:(id)value
 {
@@ -227,7 +258,7 @@
     TiProxy *proxy = nil;
     
     if([overlay isKindOfClass:[GMSPolygon class]]) {
-        proxy = [[[TiGooglemapsPolygonProxy alloc] _initWithPageContext:[[self proxy] pageContext]] autorelease];
+        proxy = [[TiGooglemapsPolygonProxy alloc] _initWithPageContext:[[self proxy] pageContext]];
         [(TiGooglemapsPolygonProxy*)proxy setPolygon: (GMSPolygon*)overlay];
         type = @"polygon";
     } else if([overlay isKindOfClass:[GMSPolyline class]]) {

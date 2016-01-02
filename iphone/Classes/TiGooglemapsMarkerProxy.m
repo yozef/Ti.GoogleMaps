@@ -26,16 +26,11 @@
 -(void)setMarker:(GMSMarker*)marker
 {
     if (_marker) {
-        RELEASE_TO_NIL(_marker);
+        marker = nil;
     }
     
     _marker = marker;
     [self marker];
-}
-
--(void)dealloc
-{
-    [super dealloc];
 }
 
 #pragma mark Public API's
