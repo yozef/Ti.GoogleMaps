@@ -36,9 +36,21 @@
             marker.icon = cluster.marker.icon;
         }
         
-        marker.userData = cluster.marker.userData;
-        
         marker.position = cluster.marker.position;
+        marker.snippet = cluster.marker.snippet;
+        marker.groundAnchor = cluster.marker.groundAnchor;
+        marker.infoWindowAnchor = cluster.marker.infoWindowAnchor;
+        marker.appearAnimation = cluster.marker.appearAnimation;
+        marker.draggable = cluster.marker.draggable;
+        marker.flat = cluster.marker.flat;
+        marker.rotation = cluster.marker.rotation;
+        marker.opacity = cluster.marker.opacity;
+        marker.userData = cluster.marker.userData;
+        marker.panoramaView = cluster.marker.panoramaView;
+        marker.title = cluster.marker.title;
+        marker.tappable = cluster.marker.tappable;
+        marker.zIndex = cluster.marker.zIndex;
+        
         marker.map = _map;
     }
 }
@@ -50,47 +62,47 @@
     
     CGRect rect = CGRectMake(0, 0, diameter, diameter);
     UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
-
+    
     CGContextRef ctx = UIGraphicsGetCurrentContext();
-
+    
     // set stroking color and draw circle
     [[UIColor colorWithRed:1 green:1 blue:1 alpha:0.8] setStroke];
     
     if (count > 100) [[UIColor orangeColor] setFill];
     else if (count > 10) [[UIColor yellowColor] setFill];
     else [[UIColor colorWithRed:0.0/255.0 green:100.0/255.0 blue:255.0/255.0 alpha:1] setFill];
-
+    
     CGContextSetLineWidth(ctx, inset);
-
+    
     // make circle rect 5 px from border
     CGRect circleRect = CGRectMake(0, 0, diameter, diameter);
     circleRect = CGRectInset(circleRect, inset, inset);
-
+    
     // draw circle
     CGContextFillEllipseInRect(ctx, circleRect);
     CGContextStrokeEllipseInRect(ctx, circleRect);
-
+    
     CTFontRef myFont = CTFontCreateWithName( (CFStringRef)@"Helvetica-Bold", 12.0f, NULL);
     
     UIColor *fontColor;
-    if ((count <= 100) && count > 10) fontColor = [UIColor blackColor];
+    if ((count < 100) && count > 10) fontColor = [UIColor blackColor];
     else fontColor = [UIColor whiteColor];
     
     NSDictionary *attributesDict = [NSDictionary dictionaryWithObjectsAndKeys:
-            (__bridge id)myFont, (id)kCTFontAttributeName,
-                    fontColor, (id)kCTForegroundColorAttributeName, nil];
-
+                                    (__bridge id)myFont, (id)kCTFontAttributeName,
+                                    fontColor, (id)kCTForegroundColorAttributeName, nil];
+    
     // create a naked string
     NSString *string = [[NSString alloc] initWithFormat:@"%lu", (unsigned long)count];
-
+    
     NSAttributedString *stringToDraw = [[NSAttributedString alloc] initWithString:string
                                                                        attributes:attributesDict];
-
+    
     // flip the coordinate system
     CGContextSetTextMatrix(ctx, CGAffineTransformIdentity);
     CGContextTranslateCTM(ctx, 0, diameter);
     CGContextScaleCTM(ctx, 1.0, -1.0);
-
+    
     CTFramesetterRef frameSetter = CTFramesetterCreateWithAttributedString((__bridge CFAttributedStringRef)(stringToDraw));
     CGSize suggestedSize = CTFramesetterSuggestFrameSizeWithConstraints(
                                                                         frameSetter, /* Framesetter */
@@ -100,22 +112,22 @@
                                                                         NULL /* Gives the range of string that fits into the constraints, doesn't matter in your situation */
                                                                         );
     CFRelease(frameSetter);
-    
+    CFRelease(myFont);
     //Get the position on the y axis
-    float midHeight = diameter;
-    midHeight -= suggestedSize.height;
     
     float midWidth = diameter / 2;
     midWidth -= suggestedSize.width / 2;
-
+    
     CTLineRef line = CTLineCreateWithAttributedString(
-            (__bridge CFAttributedStringRef)stringToDraw);
+                                                      (__bridge CFAttributedStringRef)stringToDraw);
     CGContextSetTextPosition(ctx, midWidth, 12);
     CTLineDraw(line, ctx);
-
+    
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-
+    
+    CFRelease(line);
+    
     return image;
 }
 
