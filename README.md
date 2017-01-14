@@ -46,7 +46,7 @@ maps.setAPIKey("<YOUR_GOOGLE_MAPS_API_KEY>");
 If you want to build the module from the source, you need to check some things beforehand:
 - Set the `TITANIUM_SDK_VERSION` inside the `ios/titanium.xcconfig` file to the Ti.SDK version you want to build with.
 <<<<<<< HEAD
-- Build the project using the `ios/build.py` with `python [path/to/module]/ios/build.py` for Ti.SDK < 5.2.0 and `appc ti build -p ios 
+- Build the project using the `ios/build.py` with `python [path/to/module]/ios/build.py` for Ti.SDK < 5.2.0 and `appc ti build -p ios` 
 - Check the [releases tab](https://github.com/hansemannn/ti.googlemaps/releases) for stable pre-packaged versions of the module
 
 Features
