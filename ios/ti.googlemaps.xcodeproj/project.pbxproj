@@ -39,9 +39,6 @@
 		3A433F071BE9AE620005C8AE /* TiGooglemapsCircleProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A433F051BE9AE620005C8AE /* TiGooglemapsCircleProxy.h */; };
 		3A433F081BE9AE620005C8AE /* TiGooglemapsCircleProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A433F061BE9AE620005C8AE /* TiGooglemapsCircleProxy.m */; };
 		3A7097E21BF1CD9B0044DBFB /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF900A31BC1ED7800172627 /* ImageIO.framework */; };
-		3A761FA31D62EFAD00774C81 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A761FA01D62EFAD00774C81 /* GoogleMaps.framework */; };
-		3A761FA41D62EFAD00774C81 /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A761FA11D62EFAD00774C81 /* GoogleMapsBase.framework */; };
-		3A761FA51D62EFAD00774C81 /* GoogleMapsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A761FA21D62EFAD00774C81 /* GoogleMapsCore.framework */; };
 		3ACA7B111D2986FC00847EBF /* TiGooglemapsAutocompleteDialogProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACA7B0F1D2986FC00847EBF /* TiGooglemapsAutocompleteDialogProxy.h */; };
 		3ACA7B121D2986FC00847EBF /* TiGooglemapsAutocompleteDialogProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACA7B101D2986FC00847EBF /* TiGooglemapsAutocompleteDialogProxy.m */; };
 		3ACF6A121CBA800600BC765B /* TiGooglemapsAnnotationProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACF6A101CBA800600BC765B /* TiGooglemapsAnnotationProxy.h */; };
@@ -50,7 +47,6 @@
 		3ACF6A1B1CBA874700BC765B /* TiGooglemapsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACF6A171CBA874700BC765B /* TiGooglemapsView.m */; };
 		3ACF6A1C1CBA874700BC765B /* TiGooglemapsViewProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACF6A181CBA874700BC765B /* TiGooglemapsViewProxy.h */; };
 		3ACF6A1D1CBA874700BC765B /* TiGooglemapsViewProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACF6A191CBA874700BC765B /* TiGooglemapsViewProxy.m */; };
-		3AE5AA7A1D638FE7004FC83E /* GooglePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AE5AA791D638FE7004FC83E /* GooglePlaces.framework */; };
 		3AF900AB1BC1ED7800172627 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF9009B1BC1ED7800172627 /* Accelerate.framework */; };
 		3AF900AC1BC1ED7800172627 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF9009C1BC1ED7800172627 /* AVFoundation.framework */; };
 		3AF900AD1BC1ED7800172627 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF9009D1BC1ED7800172627 /* CoreBluetooth.framework */; };
@@ -63,11 +59,12 @@
 		3AF900B81BC1ED7800172627 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF900A81BC1ED7800172627 /* QuartzCore.framework */; };
 		3AF900B91BC1ED7800172627 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF900A91BC1ED7800172627 /* Security.framework */; };
 		3AF900BA1BC1ED7800172627 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF900AA1BC1ED7800172627 /* SystemConfiguration.framework */; };
-		3AF900C31BC1F05900172627 /* libicucore.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF900C01BC1F05900172627 /* libicucore.A.dylib */; };
-		3AF900C41BC1F05900172627 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF900C11BC1F05900172627 /* libz.1.dylib */; };
-		3AF900C61BC1F08200172627 /* libc++.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF900C51BC1F08200172627 /* libc++.1.dylib */; };
 		AA747D9F0F9514B9006C5449 /* TiGooglemaps_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* TiGooglemaps_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		DBA037041DB1125D004279F0 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBA037001DB1125D004279F0 /* GoogleMaps.framework */; };
+		DBA037051DB1125D004279F0 /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBA037011DB1125D004279F0 /* GoogleMapsBase.framework */; };
+		DBA037061DB1125D004279F0 /* GoogleMapsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBA037021DB1125D004279F0 /* GoogleMapsCore.framework */; };
+		DBA037071DB1125D004279F0 /* GooglePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBA037031DB1125D004279F0 /* GooglePlaces.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,9 +96,6 @@
 		3A433F011BE9AB270005C8AE /* TiGooglemapsPolygonProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiGooglemapsPolygonProxy.m; path = Classes/TiGooglemapsPolygonProxy.m; sourceTree = "<group>"; };
 		3A433F051BE9AE620005C8AE /* TiGooglemapsCircleProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiGooglemapsCircleProxy.h; path = Classes/TiGooglemapsCircleProxy.h; sourceTree = "<group>"; };
 		3A433F061BE9AE620005C8AE /* TiGooglemapsCircleProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiGooglemapsCircleProxy.m; path = Classes/TiGooglemapsCircleProxy.m; sourceTree = "<group>"; };
-		3A761FA01D62EFAD00774C81 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = platform/GoogleMaps.framework; sourceTree = "<group>"; };
-		3A761FA11D62EFAD00774C81 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = platform/GoogleMapsBase.framework; sourceTree = "<group>"; };
-		3A761FA21D62EFAD00774C81 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = platform/GoogleMapsCore.framework; sourceTree = "<group>"; };
 		3ACA7B0F1D2986FC00847EBF /* TiGooglemapsAutocompleteDialogProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiGooglemapsAutocompleteDialogProxy.h; path = Classes/TiGooglemapsAutocompleteDialogProxy.h; sourceTree = "<group>"; };
 		3ACA7B101D2986FC00847EBF /* TiGooglemapsAutocompleteDialogProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiGooglemapsAutocompleteDialogProxy.m; path = Classes/TiGooglemapsAutocompleteDialogProxy.m; sourceTree = "<group>"; };
 		3ACF6A101CBA800600BC765B /* TiGooglemapsAnnotationProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiGooglemapsAnnotationProxy.h; path = Classes/TiGooglemapsAnnotationProxy.h; sourceTree = "<group>"; };
@@ -110,7 +104,6 @@
 		3ACF6A171CBA874700BC765B /* TiGooglemapsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiGooglemapsView.m; path = Classes/TiGooglemapsView.m; sourceTree = "<group>"; };
 		3ACF6A181CBA874700BC765B /* TiGooglemapsViewProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiGooglemapsViewProxy.h; path = Classes/TiGooglemapsViewProxy.h; sourceTree = "<group>"; };
 		3ACF6A191CBA874700BC765B /* TiGooglemapsViewProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiGooglemapsViewProxy.m; path = Classes/TiGooglemapsViewProxy.m; sourceTree = "<group>"; };
-		3AE5AA791D638FE7004FC83E /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = platform/GooglePlaces.framework; sourceTree = "<group>"; };
 		3AF9009B1BC1ED7800172627 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		3AF9009C1BC1ED7800172627 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		3AF9009D1BC1ED7800172627 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
@@ -120,22 +113,17 @@
 		3AF900A11BC1ED7800172627 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		3AF900A21BC1ED7800172627 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		3AF900A31BC1ED7800172627 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		3AF900A41BC1ED7800172627 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		3AF900A51BC1ED7800172627 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
-		3AF900A61BC1ED7800172627 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		3AF900A71BC1ED7800172627 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		3AF900A81BC1ED7800172627 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3AF900A91BC1ED7800172627 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		3AF900AA1BC1ED7800172627 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		3AF900BB1BC1EE9200172627 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
-		3AF900BC1BC1EE9200172627 /* libc++abi.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++abi.tbd"; path = "usr/lib/libc++abi.tbd"; sourceTree = SDKROOT; };
-		3AF900BF1BC1F05900172627 /* libSystem.B.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSystem.B.dylib; path = ../../../../../../usr/lib/libSystem.B.dylib; sourceTree = "<group>"; };
-		3AF900C01BC1F05900172627 /* libicucore.A.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.A.dylib; path = ../../../../../../usr/lib/libicucore.A.dylib; sourceTree = "<group>"; };
-		3AF900C11BC1F05900172627 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
-		3AF900C51BC1F08200172627 /* libc++.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.1.dylib"; path = "../../../../../../usr/lib/libc++.1.dylib"; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* TiGooglemaps_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiGooglemaps_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libTiGooglemaps.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTiGooglemaps.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBA037001DB1125D004279F0 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = platform/GoogleMaps.framework; sourceTree = "<group>"; };
+		DBA037011DB1125D004279F0 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = platform/GoogleMapsBase.framework; sourceTree = "<group>"; };
+		DBA037021DB1125D004279F0 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = platform/GoogleMapsCore.framework; sourceTree = "<group>"; };
+		DBA037031DB1125D004279F0 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = platform/GooglePlaces.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,24 +131,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AF900C61BC1F08200172627 /* libc++.1.dylib in Frameworks */,
-				3AF900C31BC1F05900172627 /* libicucore.A.dylib in Frameworks */,
-				3AF900C41BC1F05900172627 /* libz.1.dylib in Frameworks */,
 				3AF900AB1BC1ED7800172627 /* Accelerate.framework in Frameworks */,
 				3AF900AC1BC1ED7800172627 /* AVFoundation.framework in Frameworks */,
 				3AF900AD1BC1ED7800172627 /* CoreBluetooth.framework in Frameworks */,
-				3A761FA31D62EFAD00774C81 /* GoogleMaps.framework in Frameworks */,
-				3A761FA51D62EFAD00774C81 /* GoogleMapsCore.framework in Frameworks */,
+				DBA037041DB1125D004279F0 /* GoogleMaps.framework in Frameworks */,
+				DBA037061DB1125D004279F0 /* GoogleMapsCore.framework in Frameworks */,
 				3AF900AE1BC1ED7800172627 /* CoreData.framework in Frameworks */,
 				3AF900AF1BC1ED7800172627 /* CoreGraphics.framework in Frameworks */,
 				3AF900B01BC1ED7800172627 /* CoreLocation.framework in Frameworks */,
 				3AF900B11BC1ED7800172627 /* CoreText.framework in Frameworks */,
-				3AE5AA7A1D638FE7004FC83E /* GooglePlaces.framework in Frameworks */,
+				DBA037071DB1125D004279F0 /* GooglePlaces.framework in Frameworks */,
 				3AF900B21BC1ED7800172627 /* GLKit.framework in Frameworks */,
 				3AF900B71BC1ED7800172627 /* OpenGLES.framework in Frameworks */,
 				3AF900B81BC1ED7800172627 /* QuartzCore.framework in Frameworks */,
 				3AF900B91BC1ED7800172627 /* Security.framework in Frameworks */,
-				3A761FA41D62EFAD00774C81 /* GoogleMapsBase.framework in Frameworks */,
+				DBA037051DB1125D004279F0 /* GoogleMapsBase.framework in Frameworks */,
 				3AF900BA1BC1ED7800172627 /* SystemConfiguration.framework in Frameworks */,
 				3A7097E21BF1CD9B0044DBFB /* ImageIO.framework in Frameworks */,
 				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
@@ -192,10 +177,10 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3AE5AA791D638FE7004FC83E /* GooglePlaces.framework */,
-				3A761FA01D62EFAD00774C81 /* GoogleMaps.framework */,
-				3A761FA11D62EFAD00774C81 /* GoogleMapsBase.framework */,
-				3A761FA21D62EFAD00774C81 /* GoogleMapsCore.framework */,
+				DBA037001DB1125D004279F0 /* GoogleMaps.framework */,
+				DBA037011DB1125D004279F0 /* GoogleMapsBase.framework */,
+				DBA037021DB1125D004279F0 /* GoogleMapsCore.framework */,
+				DBA037031DB1125D004279F0 /* GooglePlaces.framework */,
 				3AF9009B1BC1ED7800172627 /* Accelerate.framework */,
 				3AF9009C1BC1ED7800172627 /* AVFoundation.framework */,
 				3AF9009D1BC1ED7800172627 /* CoreBluetooth.framework */,
@@ -210,15 +195,6 @@
 				3AF900A91BC1ED7800172627 /* Security.framework */,
 				3AF900AA1BC1ED7800172627 /* SystemConfiguration.framework */,
 				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
-				3AF900BF1BC1F05900172627 /* libSystem.B.dylib */,
-				3AF900C01BC1F05900172627 /* libicucore.A.dylib */,
-				3AF900C11BC1F05900172627 /* libz.1.dylib */,
-				3AF900C51BC1F08200172627 /* libc++.1.dylib */,
-				3AF900BB1BC1EE9200172627 /* libc++.1.tbd */,
-				3AF900BC1BC1EE9200172627 /* libc++abi.tbd */,
-				3AF900A41BC1ED7800172627 /* libc++.tbd */,
-				3AF900A51BC1ED7800172627 /* libicucore.tbd */,
-				3AF900A61BC1ED7800172627 /* libz.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -401,7 +377,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0820;
 			};
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "ti.googlemaps" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -562,10 +538,21 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DSTROOT = /tmp/TiGooglemaps.dst;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -574,16 +561,20 @@
 					"$(PROJECT_DIR)/platform",
 				);
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = TiGooglemaps_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_VERSION = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = NO;
 				GCC_WARN_MISSING_PARENTHESES = NO;
 				GCC_WARN_SHADOW = NO;
 				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				GCC_WARN_UNUSED_VALUE = NO;
@@ -610,8 +601,19 @@
 			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				DSTROOT = /tmp/TiGooglemaps.dst;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GoogleMaps/Frameworks",
@@ -620,15 +622,19 @@
 				);
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_MODEL_TUNING = G5;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = TiGooglemaps_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_VERSION = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = NO;
 				GCC_WARN_MISSING_PARENTHESES = NO;
 				GCC_WARN_SHADOW = NO;
 				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				GCC_WARN_UNUSED_VALUE = NO;

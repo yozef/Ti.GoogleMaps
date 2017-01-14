@@ -1,6 +1,6 @@
 /**
  * Appcelerator Titanium Mobile
- * Copyright (c) 2009-2015 by Appcelerator, Inc. All Rights Reserved.
+ * Copyright (c) 2009-Present by Appcelerator, Inc. All Rights Reserved.
  * Licensed under the terms of the Apache Public License
  * Please see the LICENSE included with this distribution for details.
  */
@@ -10,10 +10,10 @@
 
 @implementation TiGooglemapsMarkerProxy
 
+@synthesize marker = _marker;
+
 #define DEPRECATED(from, to, in) \
 NSLog(@"[WARN] Ti.GoogleMaps: %@ is deprecated since %@ in favor of %@", from, in, to);\
-
-@synthesize marker = _marker;
 
 -(GMSMarker*)marker
 {
@@ -40,6 +40,7 @@ NSLog(@"[WARN] Ti.GoogleMaps: %@ is deprecated since %@ in favor of %@", from, i
 
 -(void)dealloc
 {
+    RELEASE_TO_NIL(_marker);
     [super dealloc];
 }
 
@@ -158,13 +159,14 @@ NSLog(@"[WARN] Ti.GoogleMaps: %@ is deprecated since %@ in favor of %@", from, i
     ENSURE_UI_THREAD_1_ARG(value);
     ENSURE_TYPE(value, NSNumber);
     
-    [[self marker] setAppearAnimation:NUMINT(value)];
+    [[self marker] setAppearAnimation:[TiUtils intValue:value def:kGMSMarkerAnimationNone]];
     [self replaceValue:value forKey:@"animationStyle" notification:NO];
 }
 
 -(void)setUserData:(id)value
 {
     ENSURE_UI_THREAD_1_ARG(value);
+    
     [[self marker] setUserData:value];
     [self replaceValue:value forKey:@"userData" notification:NO];
 }

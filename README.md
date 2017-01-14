@@ -1,5 +1,5 @@
-# Ti.GoogleMaps
-
+# Ti.GoogleMaps 
+[![Build Status](https://travis-ci.org/hansemannn/ti.googlemaps.svg?branch=master)](https://travis-ci.org/hansemannn/ti.googlemaps)  [![License](http://hans-knoechel.de/shields/shield-license.svg)](./LICENSE)  [![Support](http://hans-knoechel.de/shields/shield-slack.svg)](http://tislack.org)
 
 <img width="1094" src="http://abload.de/img/showcase3vron.png">
 
@@ -11,11 +11,12 @@ Ti.GoogleMaps is an open-source project to support the Google Maps iOS-SDK in Ap
 - [x] Polygon overlay
 - [x] Polyline overlay
 - [x] Circle overlay
+- [x] Autocompletion dialog
 - [x] All delegates (exposed as events)
 
 Requirements
 ---------------
-  - Titanium Mobile SDK 5.0.2.GA or later
+  - Titanium Mobile SDK 5.2.2.GA or later
   - iOS 7.1 or later
   - Xcode 6.4 or later
 
@@ -24,7 +25,7 @@ Download + Setup
 
 ### Download
   * [Stable release](https://github.com/hansemannn/Ti.GoogleMaps/releases)
-  * Install from gitTio    <a href="http://gitt.io/component/ti.googlemaps" target="_blank"><img src="http://gitt.io/badge@2x.png" width="120" height="18" alt="Available on gitTio" /></a>
+  * [![gitTio](http://hans-knoechel.de/shields/shield-gittio.svg)](http://gitt.io/component/ti.googlemaps)
 
 ### Setup
 Unpack the module and place it inside the `modules/iphone/` folder of your project.
@@ -38,21 +39,24 @@ Edit the modules section of your `tiapp.xml` file to include this module:
 Initialize the module by setting the Google Maps API key you can get from [here](https://developers.google.com/maps/signup).
 ```javascript
 var maps = require("ti.googlemaps");
-maps.setAPIKey("<YOUR_API_KEY>");
+maps.setAPIKey("<YOUR_GOOGLE_MAPS_API_KEY>");
 ```
 
 ### Build
 If you want to build the module from the source, you need to check some things beforehand:
-- The latest GoogleMaps.framework is > 100 MB, so Github won't allow pushing it to the repository. So you need to get the [latest Google Maps iOS](https://developers.google.com/maps/documentation/ios-sdk/) and copy it into `/ios/platform/GoogleMaps.framework`. 
-- Make sure to link the framework in "Build Phases" -> "Link Binary With Libraries" -> Select "GoogleMaps.framework"
 - Set the `TITANIUM_SDK_VERSION` inside the `ios/titanium.xcconfig` file to the Ti.SDK version you want to build with.
+<<<<<<< HEAD
 - Build the project using the `ios/build.py` with `python [path/to/module]/ios/build.py` for Ti.SDK < 5.2.0 and `appc ti build -p ios --build-only` for Ti.SDK >= 5.2.1
+=======
+- Build the project with `ti build -p ios --build-only` for Ti.SDK >= 5.2.2
+>>>>>>> hansemannn/master
 - Check the [releases tab](https://github.com/hansemannn/ti.googlemaps/releases) for stable pre-packaged versions of the module
 
 Features
 --------------------------------
 #### Map View
-A map view creates the view on which annotations and overlays can be added to. You can see all possible events in the demo app. In addition, you can specify one of the following constants to the `mapType` property:
+A map view creates the view on which annotations and overlays can be added to. You can see all possible events in the demo app. 
+In addition, you can specify one of the following constants to the `mapType` property:
  - `MAP_TYPE_NORMAL`
  - `MAP_TYPE_HYBRID`
  - `MAP_TYPE_SATELLITE`
@@ -91,6 +95,10 @@ The module supports all native delegates - exposed as events. These are:
 - [x] dragend
 - [x] complete
 
+> Note: For annotations, the latitude, longitude and userData is returned, not the whole annotation proxy to keep the 
+> performance at it's best. If you want to identify an annotation, either use the generated UUID string in the `userData` 
+> or set an own key in the `userData` property of your annotation.
+
 Map Controls:
 ```javascript
 mapView.indoorEnabled = false;
@@ -112,8 +120,14 @@ mapView.allowScrollGesturesDuringRotateOrZoom = false;
 
 Map Insets:
 ```javascript
-$.mapview.mapInsets = { bottom:200 };
+mapView.mapInsets = { bottom:200 };
 ```
+
+Map Style:
+```javascript
+mapView.mapStyle = "JSON_STYLE_GOES_HERE";
+```
+See [this link](https://developers.google.com/maps/documentation/ios-sdk/hiding-features) for more infos on map styling.
 
 Animate to a location:
 ```javascript
@@ -212,6 +226,9 @@ var dialog = GoogleMaps.createAutocompleteDialog({
     primaryTextHighlightColor: "blue",
     tintColor: "blue"
 });
+
+// You need a Google Places API key from the Google Developer Console
+dialog.configure("<YOUR_GOOGLE_PLACES_API_KEY>");
 
 dialog.open();
 ```
